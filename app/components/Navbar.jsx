@@ -50,7 +50,7 @@ function Navbar() {
             <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#work">My Work</a>
           </li>
           <li>
-            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#socials">Socials</a>
+            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#contact">Contact me</a>
           </li>
         </ul>
         <div className="flex items-center">
@@ -95,7 +95,7 @@ function Navbar() {
             <a href="#work">My Work</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="#socials">Socials</a>
+            <a href="#contact">Contact me</a>
           </li>
         </ul>
       </nav>

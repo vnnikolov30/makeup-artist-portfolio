@@ -3,9 +3,13 @@ import Image from "next/image";
 import aboutPhoto from "@/public/assets/about-photo.jpg";
 function About() {
   return (
-    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo">Get to know me </h4>
-      <h2 className=" text-center text-5xl font-Ovo"> Who am i?</h2>
+    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20 text-center">
+      <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
+        Who am i<span className="text-[#b76e78]">?</span>
+      </h1>
+      <p className="text-lg text-gray-600 max-w-xl mx-auto font-Ovo">
+        Get to know me
+      </p>
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
         <div className="w-64 sm:w-80 rounded-3xl max-w-none">
           <Image
@@ -22,8 +26,6 @@ function About() {
             consequuntur, iste dicta repudiandae doloremque nobis beatae
             suscipit nemo dignissimos ducimus.
           </p>
-
-
         </div>
       </div>
     </div>
