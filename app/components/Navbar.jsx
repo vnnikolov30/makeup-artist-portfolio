@@ -13,13 +13,15 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    });
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <>
@@ -40,17 +42,37 @@ function Navbar() {
             isScroll ? "" : " bg-white shadow-sm bg-opacity-50"
           }`}
         >
-          <li >
-            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"href="#about">About me</a>
+          <li>
+            <a
+              className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
+              href="#about"
+            >
+              About me
+            </a>
           </li>
           <li>
-            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#services">Services</a>
+            <a
+              className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
+              href="#services"
+            >
+              Services
+            </a>
           </li>
           <li>
-            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#work">My Work</a>
+            <a
+              className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
+              href="#work"
+            >
+              My Work
+            </a>
           </li>
           <li>
-            <a className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]" href="#contact">Contact me</a>
+            <a
+              className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
+              href="#contact"
+            >
+              Contact me
+            </a>
           </li>
         </ul>
         <div className="flex items-center">
