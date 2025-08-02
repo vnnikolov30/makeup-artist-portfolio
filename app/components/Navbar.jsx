@@ -12,6 +12,10 @@ import closeWhite from "@/public/assets/close-white.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
+  const [isLight, setIsLight] = useState(true);
+  const toggleDarkmode = () => {
+    setIsLight((prev) => !prev);
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.scrollY > 50);
@@ -33,7 +37,7 @@ function Navbar() {
           isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""
         }`}
       >
-        <a href="#">
+        <a href="/#">
           <Image src={logo} alt="logo" className="w-28 cursor-pointer mr-14" />
         </a>
 
@@ -53,7 +57,7 @@ function Navbar() {
           <li>
             <a
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
-              href="#services"
+              href="/#services"
             >
               Services
             </a>
@@ -61,7 +65,7 @@ function Navbar() {
           <li>
             <a
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
-              href="#work"
+              href="/#work"
             >
               My Work
             </a>
@@ -69,15 +73,22 @@ function Navbar() {
           <li>
             <a
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
-              href="#contact"
+              href="/#contact"
             >
               Contact me
             </a>
           </li>
         </ul>
         <div className="flex items-center">
-          <button>
-            <Image src={moonIcon} alt="moon-icon" className="w-6" />
+          <button
+            className="md:cursor-pointer"
+            onClick={toggleDarkmode}
+          >
+            {isLight ? (
+              <Image src={moonIcon} alt="moon-icon" className="w-6" />
+            ) : (
+              <Image src={sunIcon} alt="moon-icon" className="w-6" />
+            )}
           </button>
 
           <button
@@ -108,16 +119,16 @@ function Navbar() {
           </div>
 
           <li onClick={() => setMenuOpen(false)}>
-            <a href="#about">About me</a>
+            <a href="/#about">About me</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="#services">Services</a>
+            <a href="/#services">Services</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="#work">My Work</a>
+            <a href="/#work">My Work</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="#contact">Contact me</a>
+            <a href="/#contact">Contact me</a>
           </li>
         </ul>
       </nav>

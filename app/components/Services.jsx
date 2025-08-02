@@ -1,9 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import Card from "./Card";
 import cardMakeup from "@/public/assets/makeup-card-img.png";
-import nailsCard from  "@/public/assets/nails-card.jpg";
-import faceCard from  "@/public/assets/face-card.jpg";
-import waxCard from  "@/public/assets/wax-card.webp";
+import nailsCard from "@/public/assets/nails-card.jpg";
+import faceCard from "@/public/assets/face-card.jpg";
+import waxCard from "@/public/assets/wax-card.webp";
 
 function Services() {
   return (
@@ -16,11 +17,34 @@ function Services() {
       </h1>
 
       <div className="flex flex-col items-center md:grid md:grid-cols-4 gap-7 my-10">
-        <Card title="Makeup 💄" image={cardMakeup} description="Professional makeup services for every occasion, from soft natural looks to bold, glamorous transformations." />
-        <Card title="Nails  💅" image={nailsCard} description="Manicures, pedicures, and creative nail art to keep your nails healthy, polished, and stylish."/>
-        <Card title="Waxing & Sugaring ✨" image={waxCard} description="Gentle hair removal treatments, offering both traditional waxing and natural sugaring for smooth, lasting results."/>
-        <Card title="Facials  🧖‍♀️" image={faceCard} description="Customized facial treatments designed to rejuvenate your skin, leaving it refreshed, radiant, and glowing."/>
-      
+        <Link href="/services/makeup" className="h-full w-full">
+          <Card
+            title="Makeup 💄"
+            image={cardMakeup}
+            description="Professional makeup services for every occasion, from soft natural looks to bold, glamorous transformations."
+          />
+        </Link>
+        <Link href="/services/nails" className="h-full w-full">
+          <Card
+            title="Nails  💅"
+            image={nailsCard}
+            description="Manicures, pedicures, and creative nail art to keep your nails healthy, polished, and stylish."
+          />
+        </Link>
+        <Link href="/services/waxing" className="h-full w-full">
+          <Card
+            title="Waxing & Sugaring ✨"
+            image={waxCard}
+            description="Gentle hair removal treatments, offering both traditional waxing and natural sugaring for smooth, lasting results."
+          />
+        </Link>
+        <Link href="/services/waxing" className="h-full w-full">
+          <Card
+            title="Facials  🧖‍♀️"
+            image={faceCard}
+            description="Customized facial treatments designed to rejuvenate your skin, leaving it refreshed, radiant, and glowing."
+          />
+        </Link>
       </div>
     </div>
   );
