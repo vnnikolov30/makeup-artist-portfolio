@@ -1,6 +1,7 @@
-import { Outfit, Ovo } from "next/font/google";
+import { Outfit, Ovo, Russo_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const outfit = Outfit({
   
@@ -12,6 +13,9 @@ const ovo = Ovo({
   subsets: ["latin"], weight:["400"],
 });
 
+const russo = Russo_One({
+  subsets: ["cyrilic"], weight:["400"],
+})
 export const metadata = {
   title: "Beauty by Kris",
   description: "",
@@ -21,10 +25,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden`}
+        className={`${outfit.className} ${ovo.className} ${russo.className}  antialiased leading-8 overflow-x-hidden`}
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

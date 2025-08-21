@@ -16,9 +16,9 @@ function Header() {
         </div>
 
         <div className="w-full text-center flex flex-col justify-center flex-grow">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Kris 👋🏻</h1>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto font-Ovo">
-            I'm a makeup artist based in Varna, Bulgaria.
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Здравей, аз съм Криси👋🏻</h1>
+          <p className="text-lg text-gray-600 max-w-xl mx-auto font-russo_one">
+            Професионален гримьор от Варна, България
           </p>
         </div>
       </section>

@@ -13,7 +13,7 @@ function Contact() {
       className="w-full px-[12%] py-10 scroll-mt-20 text-center"
     >
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        Get in touch<span className="text-[#b76e78]">.</span>
+        Свържи се с мен<span className="text-[#b76e78]">.</span>
       </h1>
       <div>
         <form onSubmit={handleSubmit} className="max-w-2x1 mx-auto">
@@ -28,7 +28,7 @@ function Contact() {
             <input
               name="name"
               type="text"
-              placeholder="Name"
+              placeholder="Име"
               required
               className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             />
@@ -42,16 +42,16 @@ function Contact() {
             <textarea
               name="message"
               rows="6"
-              placeholder="Enter your message..."
+              placeholder="Въведете своето съобщение..."
               required
               className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             ></textarea>
             <button
               type="submit"
               disabled={loading}
-              className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 cursor-pointer"
+              className="py-3 px-8 w-max flex items-center justify-between  bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 cursor-pointer"
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? "Изпращане…" : "Изпрати ᯓ➤"}
             </button>
           </div>
         </form>
@@ -59,7 +59,7 @@ function Contact() {
       </div>
 
       <h1 className="text-2xl md:text-3xl lg:text-3xl font-black text-gray-900 tracking-wider  mb-8">
-        Or conact me here{" "}
+        Или ме намери тук{" "}
       </h1>
       <div className="flex items-center  justify-evenly my-10 flex-auto">
         <a

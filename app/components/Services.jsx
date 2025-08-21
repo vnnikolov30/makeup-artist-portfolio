@@ -5,6 +5,7 @@ import cardMakeup from "@/public/assets/makeup-card-img.png";
 import nailsCard from "@/public/assets/nails-card.jpg";
 import faceCard from "@/public/assets/face-card.jpg";
 import waxCard from "@/public/assets/wax-card.webp";
+import selfMakeupCard from "@/public/assets/self-makeup.webp";
 
 function Services() {
   return (
@@ -13,36 +14,36 @@ function Services() {
       className="w-full px-[12%] py-10 scroll-mt-20 text-center"
     >
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        Services<span className="text-[#b76e78]">.</span>
+        Услуги<span className="text-[#b76e78]">.</span>
       </h1>
 
       <div className="flex flex-col items-center md:grid md:grid-cols-4 gap-7 my-10">
         <Link href="/services/makeup" className="h-full w-full">
           <Card
-            title="Makeup 💄"
+            title="Грим 💄"
             image={cardMakeup}
-            description="Professional makeup services for every occasion, from soft natural looks to bold, glamorous transformations."
+            description="Професионален грим за всеки повод – от нежна, естествена визия до дръзка и бляскава трансформация."
           />
         </Link>
-        <Link href="/services/nails" className="h-full w-full">
+        <Link href="/services/self-makeup" className="h-full w-full">
           <Card
-            title="Nails  💅"
-            image={nailsCard}
-            description="Manicures, pedicures, and creative nail art to keep your nails healthy, polished, and stylish."
+            title="Уроци по самогримиране 🎨"
+            image={selfMakeupCard}
+            description="Индивидуални уроци, в които ще се научиш как сама да подчертаваш красотата си, лесно и уверено."
           />
         </Link>
         <Link href="/services/waxing" className="h-full w-full">
           <Card
-            title="Waxing & Sugaring ✨"
+            title="Коламаска & Sugaring ✨"
             image={waxCard}
-            description="Gentle hair removal treatments, offering both traditional waxing and natural sugaring for smooth, lasting results."
+            description="Нежна епилация с традиционна кола маска или натурална захарна паста за копринено гладка кожа."
           />
         </Link>
         <Link href="/services/waxing" className="h-full w-full">
           <Card
-            title="Facials  🧖‍♀️"
+            title="Терапии за лице 🧖‍♀️"
             image={faceCard}
-            description="Customized facial treatments designed to rejuvenate your skin, leaving it refreshed, radiant, and glowing."
+            description="Персонализирани терапии за лице, които ще освежат и възвърнат блясъка на твоята кожа."
           />
         </Link>
       </div>

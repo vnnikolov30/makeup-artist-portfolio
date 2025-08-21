@@ -5,10 +5,10 @@ function About() {
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20 text-center">
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        Who am i<span className="text-[#b76e78]">?</span>
+        Коя съм аз<span className="text-[#b76e78]">?</span>
       </h1>
-      <p className="text-lg text-gray-600 max-w-xl mx-auto font-Ovo">
-        Get to know me
+      <p className="text-lg text-gray-600 max-w-xl mx-auto font-russo_one">
+       Опознай ме по-добре
       </p>
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
         <div className="w-64 sm:w-80 rounded-3xl max-w-none">

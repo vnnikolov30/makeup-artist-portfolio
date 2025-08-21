@@ -1,13 +1,22 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
-  font-family: Outfit;
+  font-family: Russo one;
 }
 
-.font-Ovo, a {
+.font-Ovo,
+a {
   font-family: Ovo, sans-serif;
 }
 
 .font-Outfit {
   font-family: Outfit, sans-serif;
+}
+.font-Russo_One{
+  font-family: Russo_One, sans-serif;
+}
+
+li a {
+  font-family:  Russo one;
 }

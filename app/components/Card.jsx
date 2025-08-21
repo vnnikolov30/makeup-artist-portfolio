@@ -7,9 +7,9 @@ function Card({ title, image, description, alt = "Card image" }) {
 
       <Image className="w-full h-70 object-cover" src={image} alt={alt} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
+        <div className="text-xl mb-2">{title}</div>
         {description && (
-          <p className="text-gray-700 text-base md:opacity-0 transition-opacity duration-300 ease-in-out">
+          <p className="text-gray-500 text-base md:opacity-0 transition-opacity duration-300 ease-in-out">
             {description}
           </p>
         )}

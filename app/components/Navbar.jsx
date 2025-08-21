@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
+import logoDark from "@/public/assets/logo-dark.png";
 import headerBg from "@/public/assets/header-bg-color.png";
 import moonIcon from "@/public/assets/moon_icon.png";
 import sunIcon from "@/public/assets/sun_icon.png";
@@ -38,7 +39,11 @@ function Navbar() {
         }`}
       >
         <a href="/#">
-          <Image src={logo} alt="logo" className="w-28 cursor-pointer mr-14" />
+          <Image
+            src={logoDark}
+            alt="logo"
+            className="w-28 cursor-pointer mr-14"
+          />
         </a>
 
         <ul
@@ -49,9 +54,9 @@ function Navbar() {
           <li>
             <a
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
-              href="#about"
+              href="/#about"
             >
-              About me
+              За мен
             </a>
           </li>
           <li>
@@ -59,7 +64,7 @@ function Navbar() {
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
               href="/#services"
             >
-              Services
+              Услуги
             </a>
           </li>
           <li>
@@ -67,7 +72,7 @@ function Navbar() {
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
               href="/#work"
             >
-              My Work
+              Моята работа
             </a>
           </li>
           <li>
@@ -75,21 +80,21 @@ function Navbar() {
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
               href="/#contact"
             >
-              Contact me
+              Контакт
             </a>
           </li>
         </ul>
         <div className="flex items-center">
-          <button
-            className="md:cursor-pointer"
-            onClick={toggleDarkmode}
-          >
+          <button className="md:cursor-pointer" onClick={toggleDarkmode}>
             {isLight ? (
               <Image src={moonIcon} alt="moon-icon" className="w-6" />
             ) : (
               <Image src={sunIcon} alt="moon-icon" className="w-6" />
             )}
           </button>
+
+          
+    
 
           <button
             onClick={() => setMenuOpen(true)}

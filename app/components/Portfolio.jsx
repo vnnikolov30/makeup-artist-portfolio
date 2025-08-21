@@ -43,7 +43,7 @@ function Portfolio() {
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20 text-center">
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        My Work<span className="text-[#b76e78]">.</span>
+        Моята работа<span className="text-[#b76e78]">.</span>
       </h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {data.map(({ imageLink }, index) => (
@@ -62,7 +62,7 @@ function Portfolio() {
         rel="noopener noreferrer"
         className="inline-block px-6 py-3 bg-[#b76e78] text-white font-semibold rounded-full shadow-md hover:bg-[#a25d67] transition-colors duration-300 my-10"
       >
-        Check out more
+       Разгледай още
       </a>
     </div>
   );
