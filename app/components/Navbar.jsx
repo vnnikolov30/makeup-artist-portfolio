@@ -72,7 +72,7 @@ function Navbar() {
               className=" transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
               href="/#work"
             >
-              Моята работа
+              Галерия
             </a>
           </li>
           <li>
@@ -124,16 +124,16 @@ function Navbar() {
           </div>
 
           <li onClick={() => setMenuOpen(false)}>
-            <a href="/#about">About me</a>
+            <a href="/#about">За мен</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="/#services">Services</a>
+            <a href="/#services">Услуги</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="/#work">My Work</a>
+            <a href="/#work">Галерия</a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <a href="/#contact">Contact me</a>
+            <a href="/#contact">Контакт</a>
           </li>
         </ul>
       </nav>

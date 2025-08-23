@@ -5,15 +5,26 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import FadeInSection from "./components/FadeInSection";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
+      <FadeInSection>
+        <Header />
+      </FadeInSection>
+      <FadeInSection>
+        <About />
+      </FadeInSection>
+      <FadeInSection>
+        <Services />
+      </FadeInSection>
+      <FadeInSection>
+        <Portfolio />
+      </FadeInSection>
+      <FadeInSection>
+        <Contact />
+      </FadeInSection>
     </>
   );
 }
