@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FadeInSection from "./components/FadeInSection";
+import Preloader from "./components/Preloader";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -29,7 +30,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${outfit.className} ${ovo.className} ${russo.className}  antialiased leading-8 overflow-x-hidden`}
       >
-          <Navbar />
+        <Preloader />
+        <Navbar />
 
         {children}
         <Footer />
