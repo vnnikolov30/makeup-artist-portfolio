@@ -19,7 +19,7 @@ const russo = Russo_One({
   weight: ["400"],
 });
 export const metadata = {
-  title: "Beauty by Kris",
+  title: "Glow By Krisi",
   description: "",
 };
 
