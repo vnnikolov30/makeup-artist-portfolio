@@ -15,7 +15,7 @@ const ovo = Ovo({
 });
 
 const russo = Russo_One({
-  subsets: ["cyrilic"],
+  subsets: ["cyrillic"],
   weight: ["400"],
 });
 export const metadata = {
