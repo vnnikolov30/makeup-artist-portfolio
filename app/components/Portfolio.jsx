@@ -1,5 +1,6 @@
 import React from "react";
 
+import Link from "next/link";
 function Portfolio() {
   const data = [
     {
@@ -56,14 +57,13 @@ function Portfolio() {
           </div>
         ))}
       </div>
-      <a
-        href="https://www.instagram.com/kddimitrova/"
-        target="_blank"
+      <Link
+        href="/gallery"
         rel="noopener noreferrer"
         className="inline-block px-6 py-3 bg-[#b76e78] text-white font-semibold rounded-full shadow-md hover:bg-[#a25d67] transition-colors duration-300 my-10"
       >
         Разгледай още
-      </a>
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 "use client";
-
 const accessKey = "1391f425-68d3-46e3-aef8-b3fb64771db9";
 
 import { faL } from "@fortawesome/free-solid-svg-icons";
@@ -36,13 +35,18 @@ export const useContactForm = () => {
       const data = await response.json();
 
       if (data.success) {
-        setResult("Sent ✅");
+        setResult("Изпратено ✅");
+        setTimeout(() => {
+          setResult("");
+        }, 1000);
       } else {
         setResult(data.message || "Submission");
       }
     } catch (error) {
       console.error("Submission error", error);
       setResult("Something went wrong. Please try again");
+    } finally {
+      setLoading(false);
     }
   };
   return { result, loading, handleSubmit };

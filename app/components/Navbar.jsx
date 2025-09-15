@@ -68,13 +68,14 @@ function Navbar() {
 
         {/* Dark mode + mobile menu button */}
         <div className="flex items-center">
-          <button className="md:cursor-pointer" onClick={toggleDarkmode}>
+           {/* TODO: Implement this when darkmode is ready */}
+          {/* <button className="md:cursor-pointer" onClick={toggleDarkmode}>
             {isLight ? (
               <Image src={moonIcon} alt="moon-icon" className="w-6" />
             ) : (
               <Image src={sunIcon} alt="sun-icon" className="w-6" />
             )}
-          </button>
+          </button> */}
           <button
             onClick={() => setMenuOpen(true)}
             className="block md:hidden ml-3"

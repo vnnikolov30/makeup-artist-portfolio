@@ -19,7 +19,7 @@ function Services() {
       </h1>
 
       <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-7 my-10">
-        <Link href="/services/makeup" className="h-full w-full">
+        <Link href="/services/construction" className="h-full w-full">
           <Card
             title="Грим 💄"
             image={cardMakeup}
@@ -50,7 +50,7 @@ function Services() {
         </Link>
         <Link href="/services/packages" className="h-full w-full">
           <Card
-            title="Пакети🎁"
+            title="Пакети 🎁"
             image={packageCard}
             description="Перфектното съчетание от услуги в удобни пакети, които подчертават твоята уникалност."
           />
