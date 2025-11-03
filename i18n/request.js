@@ -3,7 +3,7 @@ import { cookies} from "next/headers";
 
 export default getRequestConfig(async () => {
   const cookieLocale = (await cookies()).get("MYNEXTAPP_LOCALE")?.value || "bg";
-  const locale = cookieLocale;
+  const locale = cookieLocale || "bg";
   // const locale = "bg";
 
   return {

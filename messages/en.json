@@ -1,6 +1,51 @@
 {
+  "NavbarItems": {
+    "about": "About me",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
   "HeroSection": {
-    "h1": "Hey, I am Krisi👋🏻",
-    "p": "A professional makeup artist based in Varna, Bulgaria"
+    "h1": "Hey, I'm Krisi 👋🏻",
+    "p": "Professional makeup artist based in Varna, Bulgaria"
+  },
+  "WhoAmI": {
+    "h1": "Who am I",
+    "p": "Get to know me better"
+  },
+  "Services": {
+    "title": "Services",
+    "construction": {
+      "title": "Makeup 💄",
+      "description": "Professional makeup for every occasion – from soft, natural looks to bold and glamorous transformations."
+    },
+    "waxing": {
+      "title": "Waxing & Sugaring ✨",
+      "description": "Gentle hair removal with traditional wax or natural sugar paste for silky smooth skin."
+    },
+    "facials": {
+      "title": "Facial Treatments 🧖‍♀️",
+      "description": "Personalized facial treatments to refresh your skin and restore its natural glow."
+    },
+    "self-makeup": {
+      "title": "Self-Makeup Lessons 🎨",
+      "description": "Individual lessons where you'll learn how to highlight your beauty easily and confidently."
+    },
+    "packages": {
+      "title": "Packages 🎁",
+      "description": "The perfect combination of services in convenient packages that highlight your uniqueness."
+    }
+  },
+  "Gallery": {
+    "h1": "Gallery",
+    "cta": "See more"
+  },
+  "ContactForm": {
+    "h1": "Get in touch",
+    "name": "Name",
+    "message": "Enter your message",
+    "sending": "Sending…",
+    "send": "Send ᯓ➤",
+    "findMe": "Or find me here"
   }
 }

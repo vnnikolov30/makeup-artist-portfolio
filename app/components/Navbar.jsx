@@ -94,6 +94,14 @@ function Navbar() {
             >
               🇫🇷
             </button>
+            <button
+              onClick={() => changeLocale("en")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "en" && "bg-black text-white"
+              }`}
+            >
+              🇬🇧
+            </button>
           </div>
         )}
 
@@ -146,6 +154,14 @@ function Navbar() {
               }`}
             >
               🇫🇷
+            </button>
+            <button
+              onClick={() => changeLocale("en")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "en" && "bg-black text-white"
+              }`}
+            >
+              🇬🇧
             </button>
           </div>
         </ul>

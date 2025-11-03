@@ -42,11 +42,11 @@
     "cta": "Разгледай още"
   },
   "ContactForm": {
-    "h1": "Contacte-moi",
-    "name": "Nom",
-    "message": "Entrez votre message",
+    "h1": "Свържи се с мен",
+    "name": "Име",
+    "message": "Въведете вашето съобщение",
     "sending": "Изпращане…",
     "send": "Изпрати ᯓ➤",
-    "findMe": "Ou trouve-moi ici"
+    "findMe": "Или ме намери тук"
   }
 }
