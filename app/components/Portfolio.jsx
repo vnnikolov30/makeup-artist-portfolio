@@ -1,6 +1,7 @@
 import React from "react";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 function Portfolio() {
   const data = [
     {
@@ -40,11 +41,15 @@ function Portfolio() {
         "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
     },
   ];
-
+  const t = useTranslations("Gallery");
   return (
-    <div id="work" className="w-full px-[12%] py-10 scroll-mt-20 text-center">
+    <div
+      id="gallery"
+      className="w-full px-[12%] py-10 scroll-mt-20 text-center"
+    >
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        Галерия<span className="text-[#b76e78]">.</span>
+        {t("h1")}
+        <span className="text-[#b76e78]">.</span>
       </h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-3">
         {data.map(({ imageLink }, index) => (
@@ -62,7 +67,7 @@ function Portfolio() {
         rel="noopener noreferrer"
         className="inline-block px-6 py-3 bg-[#b76e78] text-white font-semibold rounded-full shadow-md hover:bg-[#a25d67] transition-colors duration-300 my-10"
       >
-        Разгледай още
+        {t("cta")}
       </Link>
     </div>
   );

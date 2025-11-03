@@ -4,9 +4,11 @@ import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 function Contact() {
   const { result, handleSubmit, loading } = useContactForm();
+  const t = useTranslations("ContactForm");
 
   return (
     <div
@@ -14,7 +16,8 @@ function Contact() {
       className="w-full px-[12%] py-10 scroll-mt-20 text-center"
     >
       <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
-        Свържи се с мен<span className="text-[#b76e78]">.</span>
+        {t("h1")}
+        <span className="text-[#b76e78]">.</span>
       </h1>
       <div>
         <form onSubmit={handleSubmit} className="max-w-2x1 mx-auto">
@@ -29,7 +32,7 @@ function Contact() {
             <input
               name="name"
               type="text"
-              placeholder="Име"
+              placeholder={t("name")}
               required
               className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             />
@@ -43,7 +46,7 @@ function Contact() {
             <textarea
               name="message"
               rows="6"
-              placeholder="Въведете своето съобщение..."
+              placeholder={t("message")}
               required
               className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             ></textarea>
@@ -52,7 +55,7 @@ function Contact() {
               disabled={loading}
               className="py-3 px-8 w-max flex items-center justify-between  bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 cursor-pointer"
             >
-              {loading ? "Изпращане…" : "Изпрати ᯓ➤"}
+              {loading ? t("sending") : t("send")}
             </button>
           </div>
         </form>
@@ -60,7 +63,7 @@ function Contact() {
       </div>
 
       <h1 className="text-2xl md:text-3xl lg:text-3xl font-black text-gray-900 tracking-wider  mb-8">
-        Или ме намери тук{" "}
+       {t("findMe")}
       </h1>
       <div className="flex items-center  justify-evenly my-10 flex-auto">
         <Link

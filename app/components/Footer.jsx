@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 import logoLight from "@/public/assets/logo1.png";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 function Footer() {
+  const services = ["construction", "waxing", "facials", "self-makeup", "packages"];
+  const t = useTranslations("Services");
   return (
     <footer className="bg-slate-900 px-4 md:px-16 lg:px-28">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-5">
@@ -20,51 +23,18 @@ function Footer() {
           </p>
         </div>
         <div className="border-l border-gray-300 pl-2">
-          <h2 className="text-lg font-bold mb-4 text-gray-300"> Услуги</h2>
+          <h2 className="text-lg font-bold mb-4 text-gray-300"> {t("title")}</h2>
           <ul>
-            <li>
-              <Link
-                href="/services/construction"
-                className="hover:underline text-gray-300"
-              >
-                Грим
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/waxing"
-                className="hover:underline text-gray-300"
-              >
-                Коламаска & Sugaring
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/services/facials"
-                className="hover:underline text-gray-300"
-              >
-                Терапии за лице
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/services/self-makeup"
-                className="hover:underline text-gray-300"
-              >
-                Уроци по самогримиране
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/services/packages"
-                className="hover:underline text-gray-300"
-              >
-                Пакети
-              </Link>
-            </li>
+            {services.map((id) => (
+              <li key={id}>
+                <Link
+                  href={`/services/${id}`}
+                  className="hover:underline text-gray-300"
+                >
+                  {t(`${id}.title`)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="border-l border-gray-300 pl-2">

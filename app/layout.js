@@ -2,8 +2,9 @@ import { Outfit, Ovo, Russo_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FadeInSection from "./components/FadeInSection";
 import Preloader from "./components/Preloader";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -24,17 +25,21 @@ export const metadata = {
   description: "",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const messages = await getMessages();
+  const locale = (await getLocale()) || "bg";
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <body
         className={`${outfit.className} ${ovo.className} ${russo.className}  antialiased leading-8 overflow-x-hidden`}
       >
         <Preloader />
-        <Navbar />
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

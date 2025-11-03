@@ -4,19 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import logoDark from "@/public/assets/logo-dark.png";
 import headerBg from "@/public/assets/header-bg-color.png";
-import moonIcon from "@/public/assets/moon_icon.png";
-import sunIcon from "@/public/assets/sun_icon.png";
 import menuBlack from "@/public/assets/menu-black.png";
 import closeBlack from "@/public/assets/close-black.png";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 function Navbar() {
+  const t = useTranslations("NavbarItems");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
-  const [isLight, setIsLight] = useState(true);
-
-  const toggleDarkmode = () => {
-    setIsLight((prev) => !prev);
-  };
+  const [locale, setLocale] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => setIsScroll(window.scrollY > 50);
@@ -25,12 +23,26 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = [
-    { id: "about", label: "За мен" },
-    { id: "services", label: "Услуги" },
-    { id: "work", label: "Галерия" },
-    { id: "contact", label: "Контакт" },
-  ];
+  useEffect(() => {
+    const cookieLocale = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("MYNEXTAPP_LOCALE="))
+      ?.split("=")[1];
+    if (cookieLocale) {
+      setLocale(cookieLocale);
+    } else {
+      const browserLocale = navigator.language.slice(0, 2);
+      document.cookie = `MYNEXTAPP_LOCALE=${browserLocale}`;
+      router.refresh();
+    }
+  }, [router]);
+
+  const changeLocale = (newLocale) => {
+    setLocale(newLocale);
+    document.cookie = `MYNEXTAPP_LOCALE=${newLocale}`;
+    router.refresh();
+  };
+  const menuItems = ["about", "services", "gallery", "contact"];
 
   return (
     <>
@@ -43,7 +55,6 @@ function Navbar() {
           isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""
         }`}
       >
-        {/* Logo */}
         <Link href="/" className="cursor-pointer">
           <Image src={logoDark} alt="logo" className="w-28 mr-14" />
         </Link>
@@ -51,42 +62,53 @@ function Navbar() {
         {/* Desktop menu */}
         <ul
           className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : " bg-white shadow-sm bg-opacity-50"
+            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
           }`}
         >
-          {menuItems.map((item) => (
-            <li key={item.id}>
+          {menuItems.map((id) => (
+            <li key={id}>
               <Link
-                href={`/#${item.id}`}
+                href={`/#${id}`}
                 className="transition duration-300 hover:text-[#b76e78] hover:drop-shadow-[0_0_6px_#f8c1b8]"
               >
-                {item.label}
+                {t(id)}
               </Link>
             </li>
           ))}
         </ul>
+        {!menuOpen && (
+          <div className="hidden md:flex items-center gap-5">
+            <button
+              onClick={() => changeLocale("bg")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "bg" && "bg-black text-white"
+              }`}
+            >
+              🇧🇬
+            </button>
+            <button
+              onClick={() => changeLocale("fr")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "fr" && "bg-black text-white"
+              }`}
+            >
+              🇫🇷
+            </button>
+          </div>
+        )}
 
-        {/* Dark mode + mobile menu button */}
-        <div className="flex items-center">
-           {/* TODO: Implement this when darkmode is ready */}
-          {/* <button className="md:cursor-pointer" onClick={toggleDarkmode}>
-            {isLight ? (
-              <Image src={moonIcon} alt="moon-icon" className="w-6" />
-            ) : (
-              <Image src={sunIcon} alt="sun-icon" className="w-6" />
-            )}
-          </button> */}
+        {!menuOpen && (
           <button
             onClick={() => setMenuOpen(true)}
-            className="block md:hidden ml-3"
+            className="block md:hidden ml-auto z-[60]"
           >
             <Image
               src={menuBlack}
               alt="menu-black"
-              className="w-6 cursor-pointer"
+              className="w-7 h-7 cursor-pointer"
             />
           </button>
-        </div>
+        )}
 
         {/* Mobile menu */}
         <ul
@@ -103,11 +125,29 @@ function Navbar() {
             />
           </div>
 
-          {menuItems.map((item) => (
-            <li key={item.id} onClick={() => setMenuOpen(false)}>
-              <Link href={`/#${item.id}`}>{item.label}</Link>
+          {menuItems.map((id) => (
+            <li key={id} onClick={() => setMenuOpen(false)}>
+              <Link href={`/#${id}`}>{t(id)}</Link>
             </li>
           ))}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => changeLocale("bg")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "bg" && "bg-black text-white"
+              }`}
+            >
+              🇧🇬
+            </button>
+            <button
+              onClick={() => changeLocale("fr")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "fr" && "bg-black text-white"
+              }`}
+            >
+              🇫🇷
+            </button>
+          </div>
         </ul>
       </nav>
     </>

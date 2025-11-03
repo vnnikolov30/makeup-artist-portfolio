@@ -1,0 +1,52 @@
+{
+  "NavbarItems": {
+    "about": "À propos de moi",
+    "services": "Services",
+    "gallery": "Galerie",
+    "contact": "Contact"
+  },
+  "HeroSection": {
+    "h1": "Salut, je suis Krisi👋🏻",
+    "p": "Une maquilleuse professionnelle basée à Varna, en Bulgarie"
+  },
+  "WhoAmI": {
+    "h1": "Qui je suis",
+    "p": "Apprends à me connaître"
+  },
+  "Services": {
+    "title": "Services",
+    "construction": {
+      "title": "Maquillage 💄",
+      "description": "Maquillage professionnel pour toutes les occasions – du look naturel au glamour complet."
+    },
+    "waxing": {
+      "title": "Épilation & Sugaring ✨",
+      "description": "Épilation douce à la cire ou au sucre pour une peau lisse et soyeuse."
+    },
+    "facials": {
+      "title": "Soins du visage 🧖‍♀️",
+      "description": "Des soins personnalisés qui ravivent et illuminent votre peau."
+    },
+    "self-makeup": {
+      "title": "Cours d’auto-maquillage 🎨",
+      "description": "Apprenez à vous maquiller vous-même avec confiance et facilité."
+    },
+    "packages": {
+      "title": "Forfaits 🎁",
+      "description": "Des combinaisons parfaites de services adaptés à votre style unique."
+    }
+  },
+  "Gallery":{
+    "h1": "Galerie",
+    "cta": "Découvrir plus"
+  }, 
+  "ContactForm": {
+    "h1": "Contacte-moi",
+    "name": "Nom",
+    "message": "Entre ton message...",
+    "sending": "Envoi…",
+    "send": "Envoyer ᯓ➤",
+    "findMe": "Ou trouve-moi ici"
+
+  }
+}
