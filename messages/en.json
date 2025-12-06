@@ -3,7 +3,8 @@
     "about": "About me",
     "services": "Services",
     "gallery": "Gallery",
-    "contact": "Contact"
+    "contact": "Contact",
+    "events": "Events"
   },
   "HeroSection": {
     "h1": "Hey, I'm Krisi 👋🏻",
@@ -47,5 +48,12 @@
     "sending": "Sending…",
     "send": "Send ᯓ➤",
     "findMe": "Or find me here"
+  },
+  "Events": {
+    "h1": "Events",
+    "first-photoshoot": {
+      "title": "My First Photoshoot",
+      "description": "My first professional makeup photoshoot."
+    }
   }
 }

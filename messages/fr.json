@@ -3,7 +3,8 @@
     "about": "À propos de moi",
     "services": "Services",
     "gallery": "Galerie",
-    "contact": "Contact"
+    "contact": "Contact",
+    "events": "Événements"
   },
   "HeroSection": {
     "h1": "Salut, je suis Krisi👋🏻",
@@ -36,10 +37,10 @@
       "description": "Des combinaisons parfaites de services adaptés à votre style unique."
     }
   },
-  "Gallery":{
+  "Gallery": {
     "h1": "Galerie",
     "cta": "Découvrir plus"
-  }, 
+  },
   "ContactForm": {
     "h1": "Contacte-moi",
     "name": "Nom",
@@ -47,6 +48,12 @@
     "sending": "Envoi…",
     "send": "Envoyer ᯓ➤",
     "findMe": "Ou trouve-moi ici"
-
+  },
+  "Events": {
+    "h1": "Événements",
+    "first-photoshoot": {
+      "title": "Ma Première Séance Photo",
+      "description": "Ma première séance photo maquillage."
+    }
   }
 }

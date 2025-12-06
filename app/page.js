@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import FadeInSection from "./components/FadeInSection";
+import Events from "./components/Events";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <FadeInSection>
         <Portfolio />
       </FadeInSection>
+        <Events/>
       <FadeInSection>
         <Contact />
       </FadeInSection>

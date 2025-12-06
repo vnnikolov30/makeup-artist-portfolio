@@ -42,7 +42,7 @@ function Navbar() {
     document.cookie = `MYNEXTAPP_LOCALE=${newLocale}`;
     router.refresh();
   };
-  const menuItems = ["about", "services", "gallery", "contact"];
+  const menuItems = ["about", "services", "gallery", "contact", "events"];
 
   return (
     <>
@@ -84,15 +84,7 @@ function Navbar() {
                 locale === "bg" && "bg-black text-white"
               }`}
             >
-              🇧🇬
-            </button>
-            <button
-              onClick={() => changeLocale("fr")}
-              className={`border p-2 font-bold rounded-md text-sm ${
-                locale === "fr" && "bg-black text-white"
-              }`}
-            >
-              🇫🇷
+              BG
             </button>
             <button
               onClick={() => changeLocale("en")}
@@ -100,7 +92,16 @@ function Navbar() {
                 locale === "en" && "bg-black text-white"
               }`}
             >
-              🇬🇧
+              EN
+            </button>
+
+            <button
+              onClick={() => changeLocale("fr")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "fr" && "bg-black text-white"
+              }`}
+            >
+              FR
             </button>
           </div>
         )}
@@ -145,15 +146,7 @@ function Navbar() {
                 locale === "bg" && "bg-black text-white"
               }`}
             >
-              🇧🇬
-            </button>
-            <button
-              onClick={() => changeLocale("fr")}
-              className={`border p-2 font-bold rounded-md text-sm ${
-                locale === "fr" && "bg-black text-white"
-              }`}
-            >
-              🇫🇷
+              BG
             </button>
             <button
               onClick={() => changeLocale("en")}
@@ -161,7 +154,15 @@ function Navbar() {
                 locale === "en" && "bg-black text-white"
               }`}
             >
-              🇬🇧
+              EN
+            </button>
+            <button
+              onClick={() => changeLocale("fr")}
+              className={`border p-2 font-bold rounded-md text-sm ${
+                locale === "fr" && "bg-black text-white"
+              }`}
+            >
+              FR
             </button>
           </div>
         </ul>

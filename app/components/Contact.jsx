@@ -1,8 +1,6 @@
 "use client";
 import React, { use } from "react";
-import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 

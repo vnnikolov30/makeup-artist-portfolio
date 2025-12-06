@@ -14,6 +14,7 @@ function Services() {
   const t = useTranslations("Services");
 
   const cards = [
+
     { id: "construction", image: cardMakeup },
     { id: "waxing", image: waxCard },
     { id: "facials", image: faceCard },

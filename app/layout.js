@@ -31,13 +31,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={locale} className="scroll-smooth">
       <body
-        className={`${outfit.className} ${ovo.className} ${russo.className}  antialiased leading-8 overflow-x-hidden`}
+        className={`${outfit.className} ${ovo.className} ${russo.className}  antialiased leading-8 overflow-x-hidden flex flex-col min-h-screen`}
       >
         <Preloader />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
 
-          {children}
+          <main className="flex-grow"> {children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

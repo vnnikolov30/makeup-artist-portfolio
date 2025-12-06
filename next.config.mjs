@@ -13,8 +13,7 @@ const nextConfig = {
   
 };
 
-// Initialize the next-intl plugin
+
 const withNextIntl = createNextIntlPlugin();
 
-// Export your config wrapped with next-intl
 export default withNextIntl(nextConfig);
