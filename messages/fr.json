@@ -39,7 +39,14 @@
   },
   "Gallery": {
     "h1": "Galerie",
-    "cta": "Découvrir plus"
+    "cta": "Découvrir plus",
+    "categories": {
+      "bridal": "Mariage",
+      "editorial": "Éditorial",
+      "specialFx": "Effets spéciaux",
+      "glam": "Glamour",
+      "natural": "Naturel"
+    }
   },
   "ContactForm": {
     "h1": "Contacte-moi",

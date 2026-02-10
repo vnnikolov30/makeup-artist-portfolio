@@ -39,7 +39,14 @@
   },
   "Gallery": {
     "h1": "Gallery",
-    "cta": "See more"
+    "cta": "See more",
+    "categories": {
+      "bridal": "Bridal",
+      "editorial": "Editorial",
+      "specialFx": "Special FX",
+      "glam": "Glam",
+      "natural": "Natural"
+    }
   },
   "ContactForm": {
     "h1": "Get in touch",
