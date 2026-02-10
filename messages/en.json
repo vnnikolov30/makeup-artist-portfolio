@@ -41,11 +41,10 @@
     "h1": "Gallery",
     "cta": "See more",
     "categories": {
+      "daily": "Daytime",
+      "evening": "Evening",
       "bridal": "Bridal",
-      "editorial": "Editorial",
-      "specialFx": "Special FX",
-      "glam": "Glam",
-      "natural": "Natural"
+      "festive": "Festive"
     }
   },
   "ContactForm": {

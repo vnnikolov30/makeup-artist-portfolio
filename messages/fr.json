@@ -41,11 +41,10 @@
     "h1": "Galerie",
     "cta": "Découvrir plus",
     "categories": {
+      "daily": "Journée",
+      "evening": "Soirée",
       "bridal": "Mariage",
-      "editorial": "Éditorial",
-      "specialFx": "Effets spéciaux",
-      "glam": "Glamour",
-      "natural": "Naturel"
+      "festive": "Festive"
     }
   },
   "ContactForm": {
