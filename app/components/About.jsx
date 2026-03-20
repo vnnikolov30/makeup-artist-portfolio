@@ -22,12 +22,9 @@ function About() {
           />
         </div>
         <div className="flex-1 max-w-xl bg-white shadow-md rounded-2xl p-6 text-center lg:text-left">
-          <p className="mb-10 max-w-2x1 font-Ovo">
+          <p className="mb-10 max-w-2x1 font-Ovo whitespace-pre-line">
             {" "}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non
-            aliquam a reprehenderit officia nobis nostrum, placeat eum! Ex illum
-            consequuntur, iste dicta repudiandae doloremque nobis beatae
-            suscipit nemo dignissimos ducimus.
+            {t("desc")}
           </p>
         </div>
       </div>

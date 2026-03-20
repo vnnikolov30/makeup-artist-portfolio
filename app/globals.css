@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-padding-top: 125px;
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 125px;
+  }
+}
+
 * {
   font-family: Russo one;
 }
@@ -13,10 +22,10 @@ a {
 .font-Outfit {
   font-family: Outfit, sans-serif;
 }
-.font-Russo_One{
+.font-Russo_One {
   font-family: Russo_One, sans-serif;
 }
 
 li a {
-  font-family:  Russo one;
+  font-family: Russo one;
 }

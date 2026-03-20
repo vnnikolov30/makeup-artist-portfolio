@@ -15,7 +15,7 @@ function Events() {
       </h1>
       <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-7 my-10">
         {events.map(({ id, image }) => (
-          <Link key={id} href={`/events/${id}`} className="h-full w-full">
+          <Link key={id} href={`/events/${id}`} className="w-full flex justify-center">
             <Card
               title={t(`${id}.title`)}
               image={image}

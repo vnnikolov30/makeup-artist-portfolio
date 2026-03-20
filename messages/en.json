@@ -12,10 +12,12 @@
   },
   "WhoAmI": {
     "h1": "Who am I",
-    "p": "Get to know me better"
+    "p": "Get to know me better",
+    "desc": "My name is Kristina (Krisi) and I am a professional makeup artist.\nI have lived in France for nearly 10 years and graduated from FORMABEAUTE École in Toulon with a specialization in aesthetics, where I lived for three years.\nI love to travel and draw inspiration from different cultures, using makeup to enhance each woman’s natural beauty."
   },
   "Services": {
     "title": "Services",
+    "comingSoon": "Coming soon",
     "construction": {
       "title": "Makeup 💄",
       "description": "Professional makeup for every occasion – from soft, natural looks to bold and glamorous transformations."

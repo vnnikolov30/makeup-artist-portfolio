@@ -63,7 +63,8 @@ function Portfolio() {
         ))}
       </div>
       <Link
-        href="/gallery"
+
+        href="/gallery "
         rel="noopener noreferrer"
         className="inline-block px-6 py-3 bg-[#b76e78] text-white font-semibold rounded-full shadow-md hover:bg-[#a25d67] transition-colors duration-300 my-10"
       >

@@ -39,14 +39,6 @@ const galleryData = {
     { id: 23, src: cardMakeup, client: 'Music Video' },
     { id: 24, src: cardMakeup, client: 'Portfolio Shoot' },
   ],
-  // natural: [
-  //   { id: 25, src: cardMakeup, client: 'Corporate Headshot' },
-  //   { id: 26, src: cardMakeup, client: 'Lifestyle Shoot' },
-  //   { id: 27, src: cardMakeup, client: 'Personal Client' },
-  //   { id: 28, src: cardMakeup, client: 'Beach Photoshoot' },
-  //   { id: 29, src: cardMakeup, client: 'Magazine Feature' },
-  //   { id: 30, src: cardMakeup, client: 'Brand Campaign' },
-  // ],
 };
 
 export default function MakeupGallery() {

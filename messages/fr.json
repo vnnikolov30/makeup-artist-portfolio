@@ -12,10 +12,12 @@
   },
   "WhoAmI": {
     "h1": "Qui je suis",
-    "p": "Apprends à me connaître"
+    "p": "Apprends à me connaître",
+    "desc": "Je m’appelle Kristina (Krisi) et je suis maquilleuse professionnelle.\nJ’ai vécu près de 10 ans en France et je suis diplômée de FORMABEAUTE École à Toulon, avec une spécialisation en esthétique, où j’ai vécu pendant trois ans.\nJ’aime voyager et m’inspirer de différentes cultures afin de sublimer la beauté naturelle de chaque femme à travers le maquillage."
   },
   "Services": {
     "title": "Services",
+    "comingSoon": "Bientôt disponible",
     "construction": {
       "title": "Maquillage 💄",
       "description": "Maquillage professionnel pour toutes les occasions – du look naturel au glamour complet."
