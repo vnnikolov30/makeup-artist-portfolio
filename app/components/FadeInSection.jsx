@@ -23,7 +23,7 @@ export default function FadeInSection({ children, className = "" }) {
   return (
     <div
       ref={ref}
-      className={`${className} transition-all duration-1000 ease-out transform ${
+      className={`${className} transition-all duration-250 ease-out transform ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
