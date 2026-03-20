@@ -6,7 +6,7 @@ import logoDark from "@/public/assets/logo-dark.png";
 import headerBg from "@/public/assets/header-bg-color.png";
 import menuBlack from "@/public/assets/menu-black.png";
 import closeBlack from "@/public/assets/close-black.png";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 function Navbar() {
@@ -16,6 +16,15 @@ function Navbar() {
   const [isScroll, setIsScroll] = useState(false);
   const [locale, setLocale] = useState("");
   const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "instant" });
+    }
+  }, [pathname]);
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -31,6 +40,7 @@ function Navbar() {
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
+
   useEffect(() => {
     const handleScroll = () => setIsScroll(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -57,6 +67,7 @@ function Navbar() {
     document.cookie = `MYNEXTAPP_LOCALE=${newLocale}`;
     router.refresh();
   };
+
   const menuItems = ["about", "services", "gallery", "contact", "events"];
 
   const handleMobileNavClick = (e, id) => {
@@ -64,7 +75,11 @@ function Navbar() {
       e.preventDefault();
       setMenuOpen(false);
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+        if (window.location.pathname === "/") {
+          document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+        } else {
+          router.push(`/#${id}`);
+        }
       });
     }
   };
@@ -85,7 +100,11 @@ function Navbar() {
           onClick={(e) => {
             if (window.innerWidth < 768) {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "instant" });
+              if (window.location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "instant" });
+              } else {
+                router.push("/");
+              }
             }
           }}
         >
@@ -109,6 +128,7 @@ function Navbar() {
             </li>
           ))}
         </ul>
+
         {!menuOpen && (
           <div className="hidden md:flex items-center gap-5">
             <button
@@ -127,7 +147,6 @@ function Navbar() {
             >
               EN
             </button>
-
             <button
               onClick={() => changeLocale("fr")}
               className={`border p-2 font-bold rounded-md text-sm ${
@@ -142,7 +161,7 @@ function Navbar() {
         <button
           onClick={() => setMenuOpen(true)}
           className={`block md:hidden ml-auto z-[60] transition-opacity duration-200 ${
-            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 delay-300"
+            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 delay-500"
           }`}
         >
           <Image
@@ -151,6 +170,7 @@ function Navbar() {
             className="w-7 h-7 cursor-pointer"
           />
         </button>
+
         {/* Mobile menu */}
         <ul
           ref={menuRef}
@@ -168,7 +188,7 @@ function Navbar() {
           </div>
 
           {menuItems.map((id) => (
-            <li key={id} onClick={() => setMenuOpen(false)}>
+            <li key={id}>
               <Link
                 href={`/#${id}`}
                 onClick={(e) => handleMobileNavClick(e, id)}
@@ -177,6 +197,7 @@ function Navbar() {
               </Link>
             </li>
           ))}
+
           <div className="flex items-center gap-3">
             <button
               onClick={() => changeLocale("bg")}
