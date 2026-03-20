@@ -13,14 +13,6 @@ function Header() {
   return (
     <>
       <section className="flex flex-col items-center justify-start px-6 lg:px-[8%] py-6 gap-6 h-100vh max-h-screen overflow-hidden">
-        {/* <div className="w-full max-w-4x1 mx-auto relative rounded-4xl overflow-hidden">
-          <Image
-            src={heroImage}
-            alt="hero-img"
-            className="w-full h-full object-cover object-[center_-45px]"
-          />
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.4)_100%)] rounded-4xl" />
-        </div> */}
 
         <Carousel
           images={heroImgs}

@@ -21,7 +21,9 @@ export default function Home() {
       <FadeInSection>
         <Portfolio />
       </FadeInSection>
+      <FadeInSection>
         <Events/>
+      </FadeInSection>
       <FadeInSection>
         <Contact />
       </FadeInSection>

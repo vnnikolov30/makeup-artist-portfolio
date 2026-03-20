@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logoDark from "@/public/assets/logo-dark.png";
@@ -11,11 +11,26 @@ import { useTranslations } from "next-intl";
 
 function Navbar() {
   const t = useTranslations("NavbarItems");
+  const menuRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const [locale, setLocale] = useState("");
   const router = useRouter();
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    }
 
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
   useEffect(() => {
     const handleScroll = () => setIsScroll(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -44,6 +59,16 @@ function Navbar() {
   };
   const menuItems = ["about", "services", "gallery", "contact", "events"];
 
+  const handleMobileNavClick = (e, id) => {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      setMenuOpen(false);
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+      });
+    }
+  };
+
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
@@ -55,7 +80,15 @@ function Navbar() {
           isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""
         }`}
       >
-        <Link href="/" className="cursor-pointer">
+        <Link
+          href="/"
+          onClick={(e) => {
+            if (window.innerWidth < 768) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "instant" });
+            }
+          }}
+        >
           <Image src={logoDark} alt="logo" className="w-28 mr-14" />
         </Link>
 
@@ -106,21 +139,21 @@ function Navbar() {
           </div>
         )}
 
-        {!menuOpen && (
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="block md:hidden ml-auto z-[60]"
-          >
-            <Image
-              src={menuBlack}
-              alt="menu-black"
-              className="w-7 h-7 cursor-pointer"
-            />
-          </button>
-        )}
-
+        <button
+          onClick={() => setMenuOpen(true)}
+          className={`block md:hidden ml-auto z-[60] transition-opacity duration-200 ${
+            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 delay-300"
+          }`}
+        >
+          <Image
+            src={menuBlack}
+            alt="menu-black"
+            className="w-7 h-7 cursor-pointer"
+          />
+        </button>
         {/* Mobile menu */}
         <ul
+          ref={menuRef}
           className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-all duration-500 ${
             menuOpen ? "right-0" : "-right-64"
           }`}
@@ -136,7 +169,12 @@ function Navbar() {
 
           {menuItems.map((id) => (
             <li key={id} onClick={() => setMenuOpen(false)}>
-              <Link href={`/#${id}`}>{t(id)}</Link>
+              <Link
+                href={`/#${id}`}
+                onClick={(e) => handleMobileNavClick(e, id)}
+              >
+                {t(id)}
+              </Link>
             </li>
           ))}
           <div className="flex items-center gap-3">

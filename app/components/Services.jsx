@@ -26,7 +26,7 @@ function Services() {
       id="services"
       className="w-full px-[12%] py-10 scroll-mt-20 text-center"
     >
-      <h1 className="text-6xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
+      <h1 className="text-4xl md:text-7xl lg:text-7xl font-black text-gray-900 tracking-wider uppercase mb-8">
         {t("title")}
         <span className="text-[#b76e78]">.</span>
       </h1>
